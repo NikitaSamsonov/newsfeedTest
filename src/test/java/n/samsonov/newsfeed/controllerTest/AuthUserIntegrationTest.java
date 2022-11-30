@@ -2,6 +2,7 @@ package n.samsonov.newsfeed.controllerTest;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import n.samsonov.newsfeed.controllers.AuthController;
 import n.samsonov.newsfeed.dto.AuthUserDto;
 import n.samsonov.newsfeed.dto.CustomSuccessResponse;
 import n.samsonov.newsfeed.dto.LoginUserDto;
@@ -15,8 +16,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
@@ -32,7 +35,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-@Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
+//@Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 public class AuthUserIntegrationTest {
 
     @Autowired
@@ -46,6 +49,19 @@ public class AuthUserIntegrationTest {
 
     @Autowired
     private UserMapper userMapper;
+
+//    @BeforeEach
+//    public void forAuth() {
+//
+//        var userForAuth = new UserEntity()
+//                .setAvatar("pumpedup")
+//                .setEmail("mmmtestss@sadness.com")
+//                .setName("pipka")
+//                .setRole("user")
+//                .setPassword("654321");
+//
+//        userRepository.save(userForAuth);
+//    }
 
     @BeforeEach
     void setup(){
@@ -82,28 +98,23 @@ public class AuthUserIntegrationTest {
     @Test
     public void loginTest() throws Exception {
 
-        var user1 = new UserEntity()
-                .setAvatar("imposter")
-                .setEmail("fucktests@sdness.com")
-                .setName("tester")
+        var userForAuth = new UserEntity()
+                .setAvatar("pumpedup")
+                .setEmail("mmmtestss@sadness.com")
+                .setName("pipka")
                 .setRole("user")
-                .setPassword("123456");
-        userRepository.save(user1);
+                .setPassword("654321");
+        userRepository.save(userForAuth);
 
         var authUserDto = new AuthUserDto()
-                .setEmail("fucktests@sdness.com")
-                .setPassword("123456");
+                .setEmail("mmmtestss@sadness.com")
+                .setPassword("654321");
 
         ResultActions response = mockMvc.perform(post("/api/v1/auth/login")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(authUserDto)));
 
-
-        response.andExpect(status().isOk())
-                .andExpect(jsonPath("$.data.email",
-                        is(user1.getEmail())))
-                .andExpect(jsonPath("$.data.password",
-                        is(user1.getPassword())));
+        response.andExpect(status().isOk());
 
     }
 

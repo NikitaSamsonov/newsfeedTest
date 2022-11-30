@@ -1,6 +1,5 @@
 package n.samsonov.newsfeed.serviceTest;
 
-import n.samsonov.newsfeed.TestConfig;
 import n.samsonov.newsfeed.dto.AuthUserDto;
 import n.samsonov.newsfeed.dto.RegisterUserDto;
 import n.samsonov.newsfeed.entity.UserEntity;
@@ -24,8 +23,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-@Import(TestConfig.class)
-@ExtendWith(SpringExtension.class)
+//@Import(TestConfig.class)
+//@ExtendWith(SpringExtension.class)
 //@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class AuthServiceTest {
 

@@ -1,6 +1,6 @@
 package n.samsonov.newsfeed.serviceTest;
 
-import n.samsonov.newsfeed.TestConfig;
+//import n.samsonov.newsfeed.TestConfig;
 import n.samsonov.newsfeed.dto.BaseSuccessResponse;
 import n.samsonov.newsfeed.dto.CustomSuccessResponse;
 import n.samsonov.newsfeed.dto.PutUserDto;
@@ -31,7 +31,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
-@Import(TestConfig.class)
+//@Import(TestConfig.class)
 @ExtendWith(SpringExtension.class)
 public class UserServiceTest {
 
