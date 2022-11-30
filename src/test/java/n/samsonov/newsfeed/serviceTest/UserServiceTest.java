@@ -1,5 +1,6 @@
 package n.samsonov.newsfeed.serviceTest;
 
+import n.samsonov.newsfeed.TestConfig;
 import n.samsonov.newsfeed.dto.BaseSuccessResponse;
 import n.samsonov.newsfeed.dto.CustomSuccessResponse;
 import n.samsonov.newsfeed.dto.PutUserDto;
@@ -10,25 +11,35 @@ import n.samsonov.newsfeed.errors.ErrorEnum;
 import n.samsonov.newsfeed.mapper.UserMapper;
 import n.samsonov.newsfeed.repository.PublicUserView;
 import n.samsonov.newsfeed.repository.UserRepository;
+import n.samsonov.newsfeed.services.UserService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Import;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.UUID;
 
+import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
+@Import(TestConfig.class)
+@ExtendWith(SpringExtension.class)
 public class UserServiceTest {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private UserService userService;
 
     @BeforeEach
     void cleanBase(){
@@ -55,20 +66,13 @@ public class UserServiceTest {
         userRepository.save(user1);
         userRepository.save(user2);
 
-        List<PublicUserView> userViewList = userRepository.viewAllUsers();
+        var expectOutput = userService.viewAllUsers();
 
-        assertEquals(2 , userViewList.size());
-        assertEquals(userViewList.get(0).getName(), "tester");
-
-
-        var expectResponse = CustomSuccessResponse
-                                                      .okWithData(userViewList);
-        assertThat(expectResponse.getData()).isNotNull();
-        assertThat(expectResponse)
+        assertThat(expectOutput.getData()).isNotNull();
+        assertThat(expectOutput)
                 .hasFieldOrPropertyWithValue("success", true)
                 .hasFieldOrPropertyWithValue("statusCode" , 1);
 
-        cleanBase();
     }
 
 
@@ -80,26 +84,17 @@ public class UserServiceTest {
                 .setName("aboba")
                 .setRole("user")
                 .setAvatar("string");
-
         userRepository.save(entity);
+
+        var expectOutput = userService.getUserInfoById(entity.getId());
 
         PublicUserView userInfo = userRepository.viewUserById(entity.getId());
 
-        assertThat(userInfo)
-                .hasFieldOrPropertyWithValue("email" ,entity.getEmail())
-                .hasFieldOrPropertyWithValue("name", entity.getName())
-                .hasFieldOrPropertyWithValue("role", entity.getRole())
-                .hasFieldOrPropertyWithValue("avatar", entity.getAvatar());
-
-        var expectResponse = CustomSuccessResponse.okWithData(userInfo);
-        assertThat(expectResponse).isNotNull();
-        assertThat(expectResponse.getData()).isNotNull();
-        assertThat(expectResponse)
+        assertThat(expectOutput).isNotNull();
+        assertThat(expectOutput.getData()).isNotNull();
+        assertThat(expectOutput)
                 .hasFieldOrPropertyWithValue("success", true)
                 .hasFieldOrPropertyWithValue("statusCode" , 1);
-
-        cleanBase();
-
     }
 
     @Test
@@ -119,59 +114,25 @@ public class UserServiceTest {
                 .setRole("user")
                 .setAvatar("string");
 
-        userRepository.updateUserInfo(
-                putUserDto.getEmail(),
-                putUserDto.getName(),
-                putUserDto.getAvatar(),
-                putUserDto .getRole(), entity.getId());
+        var expectOutput = userService.replaceUserInfo(putUserDto,entity.getId(),"auaua@gmail.com");
 
-        PutUserDtoResponse putUserDtoResponse = UserMapper.INSTANCE
-                                  .putUserDtoToPutUserDtoResponse(putUserDto);
-        var updatedUser = userRepository.findByName(putUserDto.getName());
-
-       assertThat(updatedUser)
-               .hasFieldOrPropertyWithValue("name" ,putUserDto.getName())
-               .hasFieldOrPropertyWithValue("email", putUserDto.getEmail())
-               .hasFieldOrPropertyWithValue("role", putUserDto.getRole())
-               .hasFieldOrPropertyWithValue("avatar", putUserDto.getAvatar());
-
-        var expectResponse = CustomSuccessResponse
-                                  .okWithData(putUserDtoResponse);
-
-        assertThat(expectResponse).isNotNull();
-        assertThat(expectResponse.getData()).isNotNull();
-        assertThat(expectResponse)
+        assertThat(expectOutput).isNotNull();
+        assertThat(expectOutput.getData()).isNotNull();
+        assertThat(expectOutput)
                 .hasFieldOrPropertyWithValue("success", true)
                 .hasFieldOrPropertyWithValue("statusCode", 1);
 
-       //cleanBase();
+
+        var changedNews = userRepository.getById(entity.getId());
+
+        assertThat(changedNews)
+                .hasFieldOrPropertyWithValue("email", putUserDto.getEmail())
+                .hasFieldOrPropertyWithValue("name", putUserDto.getName())
+                .hasFieldOrPropertyWithValue("role", putUserDto.getRole())
+                .hasFieldOrPropertyWithValue("avatar", putUserDto.getAvatar());
 
     }
 
-    @Test
-    public void exeptionsUserReplaceTest() throws CustomException{
-
-        UserEntity entity = new UserEntity().setEmail("wrong@email.com");
-        userRepository.save(entity);
-
-        Assertions.assertThrows(CustomException.class,
-                () -> {
-                    var entity1 = userRepository.findById(UUID.randomUUID());
-                    if (entity1.isEmpty()) {
-                        throw new CustomException(ErrorEnum.USER_NOT_FOUND);
-                    }
-                });
-        Assertions.assertEquals(5, ErrorEnum.USER_NOT_FOUND.getCode());
-
-        Assertions.assertThrows(CustomException.class,
-                () -> {
-                    var entity2 = userRepository.findByEmail("wrong@email.com");
-                    if (entity2.isPresent()) {
-                        throw new CustomException(ErrorEnum.USER_NOT_FOUND);
-                    }
-                });
-        Assertions.assertEquals(46, ErrorEnum.USER_WITH_THIS_EMAIL_ALREADY_EXIST.getCode());
-    }
 
     @Test
     @Transactional
@@ -180,12 +141,10 @@ public class UserServiceTest {
         UserEntity user = new UserEntity();
         userRepository.save(user);
 
-        userRepository.deleteById(user.getId());
+        var expectOutput = userService.deleteUser(user.getId());
 
-
-        var expectResponse = BaseSuccessResponse.common();
-        assertThat(expectResponse).isNotNull();
-        assertThat(expectResponse)
+        assertThat(expectOutput).isNotNull();
+        assertThat(expectOutput)
                 .hasFieldOrPropertyWithValue("success", true)
                 .hasFieldOrPropertyWithValue("statusCode", 1);
     }

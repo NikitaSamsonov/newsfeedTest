@@ -17,10 +17,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.isNotNull;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -30,6 +32,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
+@Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 public class AuthUserIntegrationTest {
 
     @Autowired
@@ -71,7 +74,8 @@ public class AuthUserIntegrationTest {
                 .andExpect(jsonPath("$.data.role",
                         is(user.getRole())))
                 .andExpect(jsonPath("$.data.name",
-                        is((user.getName()))));
+                        is((user.getName()))))
+                .andExpect(jsonPath("$.data.token", notNullValue()));
 
     }
 
@@ -83,12 +87,12 @@ public class AuthUserIntegrationTest {
                 .setEmail("fucktests@sdness.com")
                 .setName("tester")
                 .setRole("user")
-                .setPassword("1234567");
+                .setPassword("123456");
         userRepository.save(user1);
 
         var authUserDto = new AuthUserDto()
                 .setEmail("fucktests@sdness.com")
-                .setPassword("1234567");
+                .setPassword("123456");
 
         ResultActions response = mockMvc.perform(post("/api/v1/auth/login")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -100,8 +104,6 @@ public class AuthUserIntegrationTest {
                         is(user1.getEmail())))
                 .andExpect(jsonPath("$.data.password",
                         is(user1.getPassword())));
-
-
 
     }
 

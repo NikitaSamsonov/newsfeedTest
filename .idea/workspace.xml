@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2e02b006-b9cb-4fae-b87a-45dc961ea614" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/n/samsonov/newsfeed/controllerTest/NewsIntegrationTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/n/samsonov/newsfeed/serviceTest/AuthServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dbScripts/createScript.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/n/samsonov/newsfeed/TestConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/n/samsonov/newsfeed/controllerTest/NewsIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/n/samsonov/newsfeed/serviceTest/AuthServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/04f18b0c-9752-417b-9c22-ed86c4f5a058.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/5a472c29-89ff-4a19-9983-d2ef8bc471cb.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DockerFile" beforeDir="false" afterPath="$PROJECT_DIR$/DockerFile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/n/samsonov/newsfeed/security/JwtFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/n/samsonov/newsfeed/security/JwtFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/n/samsonov/newsfeed/controllerTest/AuthUserIntegrationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/n/samsonov/newsfeed/controllerTest/AuthUserIntegrationTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/n/samsonov/newsfeed/controllerTest/UserUntegrationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/n/samsonov/newsfeed/controllerTest/UserUntegrationTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/n/samsonov/newsfeed/serviceTest/FileServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/n/samsonov/newsfeed/serviceTest/FileServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/n/samsonov/newsfeed/serviceTest/NewsServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/n/samsonov/newsfeed/serviceTest/NewsServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/n/samsonov/newsfeed/serviceTest/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/n/samsonov/newsfeed/serviceTest/UserServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/n/samsonov/newsfeed/mapper/NewsMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/n/samsonov/newsfeed/mapper/NewsMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/n/samsonov/newsfeed/mapper/UserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/n/samsonov/newsfeed/mapper/UserMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/n.samsonov.newsfeed.controllerTest.UserUntegrationTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/n.samsonov.newsfeed.controllerTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/n.samsonov.newsfeed.controllerTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-n.samsonov.newsfeed.controllerTest.UserUntegrationTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/n/samsonov/newsfeed/controllerTest/AuthUserIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/n/samsonov/newsfeed/controllerTest/AuthUserIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/n/samsonov/newsfeed/controllerTest/UserUntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/n/samsonov/newsfeed/controllerTest/UserUntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/n/samsonov/newsfeed/serviceTest/FileServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/n/samsonov/newsfeed/serviceTest/FileServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/n/samsonov/newsfeed/serviceTest/NewsServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/n/samsonov/newsfeed/serviceTest/NewsServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/n/samsonov/newsfeed/serviceTest/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/n/samsonov/newsfeed/serviceTest/UserServiceTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="newsfeed" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="newsfeed" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2IFpheUl1sZPLR2a6uVLgTy3MjM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "spring.configuration.checksum": "83ae1003da0b512f76124bbace94b183"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="n.samsonov.newsfeed.controllerTest" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.Unnamed">
+    <configuration name="AuthServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;n.samsonov.newsfeed.serviceTest.AuthServiceTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="AuthUserIntegrationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;n.samsonov.newsfeed.controllerTest.AuthUserIntegrationTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="AuthUserIntegrationTest.createAndSaveUserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;n.samsonov.newsfeed.controllerTest.AuthUserIntegrationTest.createAndSaveUserTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="FileServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;n.samsonov.newsfeed.serviceTest.FileServiceTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;n.samsonov.newsfeed.serviceTest.UserServiceTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="newsfeed.test" />
+      <option name="PACKAGE_NAME" value="n" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NewsfeedApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="newsfeed.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="n.samsonov.newsfeed.NewsfeedApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.AuthUserIntegrationTest.createAndSaveUserTest" />
+      <item itemvalue="Gradle.AuthServiceTest" />
+      <item itemvalue="Gradle.AuthUserIntegrationTest" />
+      <item itemvalue="Gradle.FileServiceTest" />
+      <item itemvalue="Gradle.UserServiceTest" />
+      <item itemvalue="JUnit.Unnamed" />
+      <item itemvalue="Spring Boot.NewsfeedApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.AuthUserIntegrationTest" />
+        <item itemvalue="Gradle.AuthUserIntegrationTest.createAndSaveUserTest" />
+        <item itemvalue="Gradle.AuthServiceTest" />
+        <item itemvalue="Gradle.FileServiceTest" />
+        <item itemvalue="Gradle.UserServiceTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2e02b006-b9cb-4fae-b87a-45dc961ea614" name="Changes" comment="" />
+      <created>1669787306088</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669787306088</updated>
+      <workItem from="1669787307719" duration="21675000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/newsfeed$AuthUserIntegrationTest_createAndSaveUserTest.ic" NAME="AuthUserIntegrationTest.createAndSaveUserTest Coverage Results" MODIFIED="1669818941163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/newsfeed$Unnamed.ic" NAME="Unnamed Coverage Results" MODIFIED="1669819281644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
