@@ -2,6 +2,7 @@ package n.samsonov.newsfeed.controllers;
 
 import lombok.RequiredArgsConstructor;
 import n.samsonov.newsfeed.dto.AuthUserDto;
+import n.samsonov.newsfeed.dto.CustomSuccessResponse;
 import n.samsonov.newsfeed.dto.RegisterUserDto;
 import n.samsonov.newsfeed.services.AuthService;
 
@@ -23,8 +24,9 @@ public class AuthController {
     private final AuthService service;
 
     @PostMapping("/register")
-    public ResponseEntity register(@Validated @RequestBody RegisterUserDto dto) {
-        return new ResponseEntity(service.registerUser(dto), HttpStatus.OK);
+    public ResponseEntity<CustomSuccessResponse> register(@Validated @RequestBody RegisterUserDto dto) {
+        return new ResponseEntity(CustomSuccessResponse
+                .okWithData(service.registerUser(dto)), HttpStatus.OK);
     }
 
     @PostMapping("/login")

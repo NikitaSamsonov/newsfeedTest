@@ -25,7 +25,7 @@ public class AuthServiceImpl implements AuthService {
     private final PasswordEncoder passwordEncoder;
 
     @Override
-    public CustomSuccessResponse<LoginUserDto> registerUser(RegisterUserDto dto) {
+    public LoginUserDto registerUser(RegisterUserDto dto) {
         if (userRepository.existsByEmail(dto.getEmail())) {
             throw new CustomException(ErrorEnum.USER_ALREADY_EXISTS);
         }
@@ -35,7 +35,7 @@ public class AuthServiceImpl implements AuthService {
         userRepository.save(entity);
         LoginUserDto userLoginDto = UserMapper.INSTANCE.userEntityToLoginUserDto(entity);
         userLoginDto.setToken(jwtToken.buildToken(entity.getId()));
-        return CustomSuccessResponse.okWithData(userLoginDto);
+        return userLoginDto;
     }
 
     @Override
